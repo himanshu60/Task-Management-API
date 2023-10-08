@@ -9,10 +9,17 @@ const { auth } = require("./middleware/auth");
 const app = express();
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+    res.send(`<h2>Welcome to Tecnique Task Assignment </h2>`)
+})
+
+
 app.use(Limiter);
 app.use("/user", userRouter);
 app.use(auth);
 app.use("/task", taskRouter);
+
+
 
 app.listen(process.env.PORT, async (req, res) => {
   try {
