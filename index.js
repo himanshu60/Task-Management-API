@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
 })
 
 
-app.use(Limiter);
+app.use('/user/login',Limiter);
 app.use("/user", userRouter);
 app.use(auth);
 app.use("/task", taskRouter);
